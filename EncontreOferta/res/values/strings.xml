@@ -41,9 +41,10 @@
 	
     <!-- CADASTRAR -->
     
-    <!-- BT GERAR VOUCHER -->
+    <!-- BT GERAR VOUCHER / ENVIAR -->
     <string name="btGerarVoucher">Gerar Voucher</string>
-    <!-- BT GERAR VOUCHER  -->
+    <string name="tituloHistorico">HISTÓRICO DE VOUCHERS</string>
+    <!-- BT GERAR VOUCHER / ENVIAR -->
    
     
      <!-- CONTATO -->
@@ -57,9 +58,10 @@
     <string name="textViewEntreContato">Entre em contato conosco</string>
     <!-- CONTATO -->
     
-    <!-- ENVIAR VOUCHER -->
-    <string name="tituloHistorico">HISTÓRICO DE VOUCHERS</string>
-    <!-- ENVIAR VOUCHER -->
+    <!-- HISTORICO -->
+    <string name="historicoBemVindo">Bem Vindo: </string>
+    
+    <!-- HISTORICO -->
      
     <!-- ENVIAR VOUCHER -->
     <string name="btEnviarVoucherVoltarTela">Voltar</string>

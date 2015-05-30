@@ -36,25 +36,26 @@ public final class R {
         public static final int LinearLayoutCategoria=0x7f080010;
         public static final int LinearLayoutContato=0x7f080015;
         public static final int LinearLayoutHistorico=0x7f080020;
-        public static final int LinearLayoutInformatica=0x7f08002b;
-        public static final int LinearLayoutInformaticaDescricao=0x7f08002e;
+        public static final int LinearLayoutHistoricoOla=0x7f080022;
+        public static final int LinearLayoutInformatica=0x7f08002e;
+        public static final int LinearLayoutInformaticaDescricao=0x7f080031;
         public static final int LinearLayoutLogin=0x7f080008;
-        public static final int LinearLayoutViagensDescricao=0x7f080027;
+        public static final int LinearLayoutViagensDescricao=0x7f08002a;
         public static final int RelativeLayout1=0x7f080014;
         public static final int TituloCadastrar=0x7f080007;
         public static final int TituloCategoria=0x7f080011;
         public static final int TituloContato=0x7f080016;
         public static final int TituloHistorico=0x7f080021;
-        public static final int TituloInformatica=0x7f08002c;
-        public static final int TituloLogin=0x7f080023;
-        public static final int action_settings=0x7f080039;
-        public static final int btAcessar=0x7f080026;
+        public static final int TituloInformatica=0x7f08002f;
+        public static final int TituloLogin=0x7f080026;
+        public static final int action_settings=0x7f08003c;
+        public static final int btAcessar=0x7f080029;
         public static final int btCadastrar=0x7f08000e;
         public static final int btContatoEnviarEmail=0x7f08001a;
         public static final int btEnviarVoucher=0x7f08001f;
-        public static final int btEnviarVoucherEmail=0x7f080035;
+        public static final int btEnviarVoucherEmail=0x7f080038;
         public static final int btEnviarVoucherVoltarCategoria=0x7f08001b;
-        public static final int btGerarVoucher=0x7f080033;
+        public static final int btGerarVoucher=0x7f080036;
         public static final int contatoEmail=0x7f080019;
         public static final int contatoMSG=0x7f08000f;
         public static final int contatoNome=0x7f080018;
@@ -63,34 +64,36 @@ public final class R {
         public static final int enviarVoucherNumero=0x7f08001e;
         public static final int idCadastrese=0x7f080017;
         public static final int idCategoriasMenu=0x7f080013;
-        public static final int idDescricaoQuemSomos=0x7f08002a;
-        public static final int idImagemInformatica=0x7f080036;
-        public static final int idImagemInformaticaProduto=0x7f080031;
-        public static final int idImagemLogo=0x7f080029;
-        public static final int idInformarticaMostrarVoucher=0x7f080034;
-        public static final int idInformaticaDescricaoProduto=0x7f080032;
-        public static final int idInformaticaTituloProduto=0x7f080030;
+        public static final int idDescricaoQuemSomos=0x7f08002d;
+        public static final int idImagemInformatica=0x7f080039;
+        public static final int idImagemInformaticaProduto=0x7f080034;
+        public static final int idImagemLogo=0x7f08002c;
+        public static final int idInformarticaMostrarVoucher=0x7f080037;
+        public static final int idInformaticaDescricaoProduto=0x7f080035;
+        public static final int idInformaticaTituloProduto=0x7f080033;
         public static final int idListaCategoria=0x7f080012;
-        public static final int idListaHistorico=0x7f080022;
-        public static final int idMenuCategoria=0x7f08003c;
-        public static final int idMenuContato=0x7f08003e;
-        public static final int idMenuHistorico=0x7f08003a;
-        public static final int idMenuPrincipal=0x7f08003b;
-        public static final int idMenuQuemSomos=0x7f08003d;
-        public static final int idSubTituloProduto=0x7f080038;
-        public static final int idTituloProdutoInformatica=0x7f080037;
+        public static final int idListaHistorico=0x7f080025;
+        public static final int idMenuCategoria=0x7f08003f;
+        public static final int idMenuContato=0x7f080041;
+        public static final int idMenuHistorico=0x7f08003d;
+        public static final int idMenuPrincipal=0x7f08003e;
+        public static final int idMenuQuemSomos=0x7f080040;
+        public static final int idSubTituloProduto=0x7f08003b;
+        public static final int idTituloProdutoInformatica=0x7f08003a;
         public static final int idVoucherEmail=0x7f08000d;
         public static final int linearLayout1=0x7f080001;
-        public static final int listaInformatica=0x7f08002d;
-        public static final int loginEmail=0x7f080024;
-        public static final int loginSenha=0x7f080025;
+        public static final int listaInformatica=0x7f080030;
+        public static final int loginEmail=0x7f080027;
+        public static final int loginSenha=0x7f080028;
         public static final int principalCategoria=0x7f080002;
         public static final int principalContato=0x7f080004;
         public static final int principalLogin=0x7f080005;
         public static final int principalQuesomos=0x7f080003;
         public static final int scroll=0x7f080000;
-        public static final int tituloProdutoSelecionadoInformatica=0x7f08002f;
-        public static final int tituloQuemSomos=0x7f080028;
+        public static final int textView1=0x7f080023;
+        public static final int textView2=0x7f080024;
+        public static final int tituloProdutoSelecionadoInformatica=0x7f080032;
+        public static final int tituloQuemSomos=0x7f08002b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -111,21 +114,21 @@ public final class R {
         public static final int menu=0x7f070001;
     }
     public static final class string {
-        public static final int action_settings=0x7f050024;
+        public static final int action_settings=0x7f050025;
         public static final int app_name=0x7f050000;
         public static final int btCadastrar=0x7f050014;
-        public static final int btContatoEnviarEmail=0x7f05001b;
-        /**  BT GERAR VOUCHER  
+        public static final int btContatoEnviarEmail=0x7f05001c;
+        /**  BT GERAR VOUCHER / ENVIAR 
  CONTATO 
          */
-        public static final int btContatoVoltarInicio=0x7f050016;
-        public static final int btEnviarVoucher=0x7f050023;
-        /**  ENVIAR VOUCHER 
+        public static final int btContatoVoltarInicio=0x7f050017;
+        public static final int btEnviarVoucher=0x7f050024;
+        /**  HISTORICO 
  ENVIAR VOUCHER 
          */
-        public static final int btEnviarVoucherVoltarTela=0x7f05001e;
+        public static final int btEnviarVoucherVoltarTela=0x7f05001f;
         /**  CADASTRAR 
- BT GERAR VOUCHER 
+ BT GERAR VOUCHER / ENVIAR 
          */
         public static final int btGerarVoucher=0x7f050015;
         public static final int btLogin=0x7f05000c;
@@ -137,38 +140,39 @@ public final class R {
  QUEM SOMOS 
          */
         public static final int btVoltarQuemSomoPrincipal=0x7f050005;
-        public static final int enviarVoucherNumero=0x7f050022;
+        public static final int enviarVoucherNumero=0x7f050023;
         public static final int hint_CadastrarEmail=0x7f050010;
         public static final int hint_CadastrarEndereco=0x7f050013;
         public static final int hint_CadastrarNome=0x7f05000f;
         public static final int hint_CadastrarSenha=0x7f050011;
         public static final int hint_CadastrarTel=0x7f050012;
-        public static final int hint_ContatoEmail=0x7f050019;
-        public static final int hint_ContatoMSG=0x7f05001a;
-        public static final int hint_ContatoNome=0x7f050018;
-        public static final int hint_EnviarVoucherEmail=0x7f050021;
-        public static final int hint_EnviarVoucherNome=0x7f050020;
+        public static final int hint_ContatoEmail=0x7f05001a;
+        public static final int hint_ContatoMSG=0x7f05001b;
+        public static final int hint_ContatoNome=0x7f050019;
+        public static final int hint_EnviarVoucherEmail=0x7f050022;
+        public static final int hint_EnviarVoucherNome=0x7f050021;
         public static final int hint_LoginEmail=0x7f05000a;
         public static final int hint_LoginSenha=0x7f05000b;
+        /**  CONTATO 
+ HISTORICO 
+         */
+        public static final int historicoBemVindo=0x7f05001e;
         /**  PRINCIPAL 
          */
         public static final int principalCategoria=0x7f050001;
         public static final int principalContato=0x7f050003;
         public static final int principalLogin=0x7f050004;
         public static final int principalTop10=0x7f050002;
-        public static final int textViewEntreContato=0x7f05001c;
+        public static final int textViewEntreContato=0x7f05001d;
         public static final int textoCadastrese=0x7f05000d;
         /**  LOGIN 
  CADASTRAR 
          */
         public static final int tituloCadastrar=0x7f05000e;
         public static final int tituloCategoria=0x7f050008;
-        public static final int tituloContato=0x7f050017;
-        public static final int tituloEnviarVoucher=0x7f05001f;
-        /**  CONTATO 
- ENVIAR VOUCHER 
-         */
-        public static final int tituloHistorico=0x7f05001d;
+        public static final int tituloContato=0x7f050018;
+        public static final int tituloEnviarVoucher=0x7f050020;
+        public static final int tituloHistorico=0x7f050016;
         /**  CATEGORIA 
  LOGIN 
          */

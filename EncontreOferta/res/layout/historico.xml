@@ -28,15 +28,40 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/LinearLayoutHistoricoOla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinearLayoutHistorico"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/historicoBemVindo" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:text="Fulado"/>
+
+    </LinearLayout>
+    
     <ListView
         android:id="@+id/idListaHistorico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LinearLayoutHistorico"
+        android:layout_below="@+id/LinearLayoutHistoricoOla"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:divider="#000000" >
     </ListView>
+
     
 
 </RelativeLayout>
