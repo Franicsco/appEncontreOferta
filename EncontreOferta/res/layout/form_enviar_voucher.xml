@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ff0000"
+        android:gravity="fill_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btEnviarVoucherVoltarCategoria"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#fd5d5d"
+            android:text="@string/btEnviarVoucherVoltarTela"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/idCadastrese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/tituloEnviarVoucher"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/enviarVoucherNome"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="@string/hint_EnviarVoucherNome"
+            android:layout_marginBottom="15dp"
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/enviarVoucherEmail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="@string/hint_EnviarVoucherEmail"
+            android:layout_marginBottom="15dp"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/enviarVoucherNumero"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:textSize="18dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10" />
+
+        <Button
+            android:id="@+id/btEnviarVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btEnviarVoucher" />
+
+    </LinearLayout>
+
+</RelativeLayout>

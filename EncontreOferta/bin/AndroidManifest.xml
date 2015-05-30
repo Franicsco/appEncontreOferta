@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.projeto.encontreoferta"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/encontre_oferta_icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <!-- Princiapal -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Princiapal -->
+        
+        <!-- QUEMSOMOS -->
+        <activity
+            android:name=".QuemSomos"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!--QUEMSOMOS-->
+        
+        <!-- Contato -->
+        <activity
+            android:name=".Contato"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Contato -->
+        
+        <!-- Categoria -->
+        <activity
+            android:name=".Categoria"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Categoria -->
+        
+        <!-- Tipo Categoria -->
+        <activity
+            android:name=".TipoCategoria"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Tipo Categoria-->
+        
+        <!-- Tipo Categoria Descricao -->
+        <activity
+            android:name=".TipoCategoriaDescricao"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Tipo Categoria Descricao -->
+        
+        
+        <!-- Login -->
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Login -->
+        
+        <!-- Cadastrar -->
+        <activity
+            android:name=".Cadastrar"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Cadastrar -->
+        
+        
+        <!-- Historico -->
+        <activity
+            android:name=".Historico"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Historico -->
+        
+        
+        <!-- Enviar Numero do Voucher -->
+        <activity
+            android:name=".formEnviarVoucher"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         
+         
+        </activity>
+        <!-- Enviar Numero do Voucher  -->
+        
+    </application>
+
+</manifest>

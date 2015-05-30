@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item 
+        android:id="@+id/idMenuHistorico"
+        android:title="Histórico"
+        android:showAsAction="never"
+        />
+    
+    <item 
+        android:id="@+id/idMenuPrincipal"
+        android:title="Principal"
+        android:showAsAction="never"
+        />
+    
+    <item 
+        android:id="@+id/idMenuCategoria"
+        android:title="Categoria"
+        android:showAsAction="never"
+        />
+    
+    <item 
+        android:id="@+id/idMenuQuemSomos"
+        android:title="Quem Somos"
+        android:showAsAction="never"
+        />
+    
+    <item 
+        android:id="@+id/idMenuContato"
+        android:title="Contato"
+        android:showAsAction="never"
+        />
+    
+
+</menu>
