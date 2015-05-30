@@ -20,6 +20,8 @@ public class TipoCategoriaDescricao extends FragmentActivity{
 	TextView btEnviarVoucher;	
 	String numeroVoucher = "1234qwer";	
 	
+	String VerificaEmail;
+	
 	//Crio as Intent
 	Intent intentMenuTipoCategoriaDescricao;
 	
@@ -31,11 +33,8 @@ public class TipoCategoriaDescricao extends FragmentActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tipo_categoria_descricao);
 		
-		
-		
-		
 		//Deixo o EditText Oculto
-		Email = (EditText) findViewById(R.id.idVoucherEmail);
+		Email = (EditText) findViewById(R.id.enviarEmailVoucher);
 		Email.setVisibility(View.INVISIBLE);
 		
 		//Deixo o TextView Oculto
@@ -56,7 +55,7 @@ public class TipoCategoriaDescricao extends FragmentActivity{
 				//Deixo visivel o Campo E-mail
 				Email.setVisibility(View.VISIBLE);
 				Email.setEnabled(false);
-								
+				//Seto o e-mail do usuario que esta logado			
 				Email.setText(String.valueOf(logado.getUsuarioLogado().toString()));
 				
 				}else{
@@ -65,9 +64,6 @@ public class TipoCategoriaDescricao extends FragmentActivity{
 					btGerarVoucher.setText("Numero: " + numeroVoucher);
 					//Deixo visivel o Campo E-mail
 					Email.setVisibility(View.VISIBLE);
-					
-									
-					//Email.setText(String.valueOf(logado.getUsuarioLogado().toString()));
 				}
 				
 				//
@@ -75,15 +71,34 @@ public class TipoCategoriaDescricao extends FragmentActivity{
 				//Deixo visivel o Botão de Enviar o Voucher por e-mail
 				btEnviarVoucher.setVisibility(View.VISIBLE);
 				
-				//Acao do Clique no botão ENVIAR
-				
+				//Acao do Clique no botão ENVIAR				
 				btEnviarVoucher.setOnClickListener(new View.OnClickListener() {
 					
 					@Override
 					public void onClick(View v) {
 						
 						
-						Toast.makeText(getApplicationContext(), btGerarVoucher.getText().toString(), Toast.LENGTH_LONG).show();
+						//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
+						//Verifica se o e-mail e valido
+						
+						//Pego a String
+						String stringEmail = Email.getText().toString().trim();
+						VerificaEmail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+						
+						if(stringEmail.matches(VerificaEmail)){
+												
+							//Enviando por e-mail
+							Intent itEmail = new Intent(Intent.ACTION_SEND);
+							itEmail.setType("plain/text");
+							itEmail.putExtra(Intent.EXTRA_SUBJECT, "Numero do Voucher ");
+							itEmail.putExtra(Intent.EXTRA_TEXT, numeroVoucher);
+							itEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{stringEmail});        
+							startActivity(Intent.createChooser(itEmail,"Escolha a App para envio do e-mail..."));
+							
+						}else{
+							Toast.makeText(getApplicationContext(), "E-mail inválido", Toast.LENGTH_LONG).show();
+						}
+						
 						
 					}
 				});
@@ -114,6 +129,13 @@ public class TipoCategoriaDescricao extends FragmentActivity{
 			public boolean onMenuItemSelected(int panel, MenuItem item) {
 				//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 				switch (item.getItemId()) {
+				
+				case R.id.idMenuHistorico:
+					intentMenuTipoCategoriaDescricao = new Intent(TipoCategoriaDescricao.this, Historico.class);
+					intentMenuTipoCategoriaDescricao.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intentMenuTipoCategoriaDescricao);
+					break;
+				
 				case R.id.idMenuPrincipal:
 					intentMenuTipoCategoriaDescricao = new Intent(TipoCategoriaDescricao.this, MainActivity.class);
 					intentMenuTipoCategoriaDescricao.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

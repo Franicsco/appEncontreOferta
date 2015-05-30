@@ -9,17 +9,13 @@ import android.view.MenuItem;
 
 public class Historico extends FragmentActivity{
 	
-	//Definindo as Variaveis
-	
+	//Definindo as Variaveis	
 	Intent intentMenuHistorico;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.historico);
-		
-		
-		
 		
 		
 		//inseridno a logo ENCONTRE OFERTA
@@ -46,6 +42,13 @@ public class Historico extends FragmentActivity{
 			public boolean onMenuItemSelected(int panel, MenuItem item) {
 				//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 				switch (item.getItemId()) {
+				
+				case R.id.idMenuHistorico:
+					intentMenuHistorico = new Intent(Historico.this, Historico.class);
+					intentMenuHistorico.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intentMenuHistorico);
+					break;
+				
 				case R.id.idMenuPrincipal:
 					intentMenuHistorico = new Intent(Historico.this, MainActivity.class);
 					intentMenuHistorico.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

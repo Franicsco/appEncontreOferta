@@ -13,13 +13,17 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity {
 	
 	//Definindo as Variaveis
-	TextView categoria;
-	Intent intentCategoria;
-	TextView contato;
-	Intent intentContato;	
-	TextView quemSomos;	
-	Intent intentQuemSomos;
+	TextView categoria;	
+	TextView contato;		
+	TextView quemSomos;
 	TextView login;
+	
+	
+	
+	//Definindo as INTENTS
+	Intent intentCategoria;
+	Intent intentContato;
+	Intent intentQuemSomos;
 	Intent intentLogin;
 	Intent intentHistorico;
 	
@@ -77,19 +81,33 @@ public class MainActivity extends FragmentActivity {
 		});
 		
 		
-		//Setando o TEXTVIEW(BOTAO ACESSAR) na variavel LOGIN.
-				login = (TextView) findViewById(R.id.principalLogin);
-				//Executando a ação de clique do botão ACESSAR.
-				login.setOnClickListener(new View.OnClickListener() {
+		/*Verifica se o usuario esta logado, se estiver
+		 * Faz o botão de acessar conta sumir da tela inicial*/
+		if(usuario.getUsuarioLogado() != null){
+			
+			login = (TextView) findViewById(R.id.principalLogin);
+			login.setVisibility(View.INVISIBLE);
+		
+				
+		}
+		else{
+			//Se o usuario não estiver logado, apresenta o botão de ACESSAR CONTA na Tela inicial.
+			
+			//Setando o TEXTVIEW(BOTAO ACESSAR) na variavel LOGIN.
+			login = (TextView) findViewById(R.id.principalLogin);
+			//Executando a ação de clique do botão ACESSAR.
+			login.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					//Crio a INTENT(intentLogin) e seto a acao de ir para a tela LOGIN.CLASS. 
+					intentLogin = new Intent(MainActivity.this, Login.class);
+					startActivity(intentLogin);
 					
-					@Override
-					public void onClick(View v) {
-						//Crio a INTENT(intentLogin) e seto a acao de ir para a tela LOGIN.CLASS. 
-						intentLogin = new Intent(MainActivity.this, Login.class);
-						startActivity(intentLogin);
-						
-					}
-				});
+				}
+			});
+			
+		}
 		
 		
 		
@@ -119,14 +137,15 @@ public class MainActivity extends FragmentActivity {
 		*/
 		
 		//pego o menu XML e aciono ele.
-		getMenuInflater().inflate(R.menu.menu, menu);
+		
+		getMenuInflater().inflate(R.menu.menu, menu);		
 		return true;
 	}
 
 	//Metodo de seleção do menu.
 	@Override
-	public boolean onMenuItemSelected(int panel, MenuItem item) {				
-		
+	public boolean onMenuItemSelected(int panel, MenuItem item) {	
+				
 		//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 		switch (item.getItemId()) {
 		
@@ -136,8 +155,7 @@ public class MainActivity extends FragmentActivity {
 			startActivity(intentHistorico);
 			break;
 		
-		case R.id.idMenuPrincipal:
-			
+		case R.id.idMenuPrincipal:			
 			break;
 
 		case R.id.idMenuCategoria:

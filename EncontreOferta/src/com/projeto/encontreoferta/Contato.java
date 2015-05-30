@@ -18,7 +18,11 @@ public class Contato extends FragmentActivity{
 	Button btContatoEnviarEmail;
 	EditText contatoNome;
 	EditText contatoEmail;
-	EditText contatoMSG;	
+	EditText contatoMSG;
+	
+	String contatoVerificaEmail;
+	
+	//Definindo as INTENTs
 	Intent intentMenuContato;
 
 
@@ -41,34 +45,41 @@ public class Contato extends FragmentActivity{
 				contatoMSG = (EditText) findViewById(R.id.contatoMSG);
 				
 				//Pego sua STRING e seto nas variais: contatoN, contatoE e contatoM
-				String contatoN = contatoNome.getText().toString();
-				String contatoE = contatoEmail.getText().toString();
-				String contatoM = contatoMSG.getText().toString();
+				String contatoN = contatoNome.getText().toString().trim();
+				String contatoE = contatoEmail.getText().toString().trim();
+				String contatoM = contatoMSG.getText().toString().trim();
 				
-				//Faço uma verificação dos campos, caso estejam vazio, um TOAST é apresentado na tela.
-				if(contatoN.trim().equals("")|| contatoN == null){
-					
-					Toast.makeText(getApplicationContext(), "Digite o NOME", Toast.LENGTH_SHORT).show();
-					
-				}else if(contatoE.trim().equals("") || contatoE == null){
-					
-					Toast.makeText(getApplicationContext(), "Digite o Email", Toast.LENGTH_SHORT).show();
-					
-				}else if(contatoM.trim().equals("") || contatoM == null){
-					
-					Toast.makeText(getApplicationContext(), "Digite a Mensagem", Toast.LENGTH_SHORT).show();
-				}				
-				else{
-
-				//Enviando por e-mail
-				Intent itEmail = new Intent(Intent.ACTION_SEND);
-				itEmail.setType("plain/text");
-				itEmail.putExtra(Intent.EXTRA_SUBJECT, "Contato de: " + contatoNome.getText().toString());
-				itEmail.putExtra(Intent.EXTRA_TEXT, contatoMSG.getText().toString());
-				itEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{contatoEmail.getText().toString()});        
-				startActivity(Intent.createChooser(itEmail,"Escolha a App para envio do e-mail..."));
 				
+				//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
+				//Verifica se o e-mail e valido
+				
+				contatoVerificaEmail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+				
+				//Caso o campo NOME esteja vazio apresenta um erro via TOAST
+				if(contatoN.equals("")){
+										
+					Toast.makeText(getApplicationContext(), "O Campo NOME o preenchimento é obrigatório", Toast.LENGTH_LONG).show();	
 				}
+				//Caso o campo MENSAGEM esteja vazio apresenta um erro via TOAST
+				else if(contatoM.equals("")){
+					
+					Toast.makeText(getApplicationContext(), "O Campo MENSAGEM o preenchimento é obrigatório", Toast.LENGTH_LONG).show();	
+				}
+				else if(contatoE.matches(contatoVerificaEmail)){
+					
+							//Enviando por e-mail
+							Intent itEmail = new Intent(Intent.ACTION_SEND);
+							itEmail.setType("plain/text");
+							itEmail.putExtra(Intent.EXTRA_SUBJECT, "Contato de: " + contatoN);
+							itEmail.putExtra(Intent.EXTRA_TEXT, contatoM);
+							itEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{contatoE});        
+							startActivity(Intent.createChooser(itEmail,"Escolha a App para envio do e-mail..."));
+				}
+				else{
+					//Caso o EMAIL estaja errado apresenta um erro via TOAST
+					Toast.makeText(getApplicationContext(), "E-mail Inválido", Toast.LENGTH_LONG).show();
+				}
+				
 				
 			}
 		});
@@ -110,6 +121,12 @@ public class Contato extends FragmentActivity{
 		public boolean onMenuItemSelected(int panel, MenuItem item) {
 			//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 			switch (item.getItemId()) {
+			
+			case R.id.idMenuHistorico:
+				intentMenuContato = new Intent(Contato.this, Historico.class);
+				intentMenuContato.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intentMenuContato);
+				break;
 			
 			case R.id.idMenuPrincipal:
 				intentMenuContato = new Intent(Contato.this, MainActivity.class);

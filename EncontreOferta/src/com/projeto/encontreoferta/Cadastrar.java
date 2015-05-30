@@ -44,6 +44,7 @@ public class Cadastrar extends FragmentActivity{
 			public boolean onMenuItemSelected(int panel, MenuItem item) {
 				//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 				switch (item.getItemId()) {
+				
 				case R.id.idMenuPrincipal:
 					intentMenuCadastrar = new Intent(Cadastrar.this, MainActivity.class);
 					intentMenuCadastrar.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

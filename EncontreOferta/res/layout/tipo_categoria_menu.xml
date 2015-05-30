@@ -16,7 +16,7 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/idImagemInformatica"
+            android:id="@+id/idImagemCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp" />
@@ -28,7 +28,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/idTituloProdutoInformatica"
+                android:id="@+id/idTituloProdutoCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

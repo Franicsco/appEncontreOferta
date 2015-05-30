@@ -13,7 +13,7 @@
 
        
         <TextView
-            android:id="@+id/tituloProdutoSelecionadoInformatica"
+            android:id="@+id/tituloProdutoSelecionado"
             android:layout_width="match_parent"
             android:layout_height="50dp"            
             android:textStyle="bold"
@@ -44,7 +44,7 @@
          android:orientation="vertical" >
         
          <TextView
-             android:id="@+id/idInformaticaTituloProduto"
+             android:id="@+id/idTituloProduto"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_below="@+id/LinearLayoutInformatica"
@@ -55,19 +55,19 @@
              android:gravity="center" />
 
         <ImageView
-            android:id="@+id/idImagemInformaticaProduto"
+            android:id="@+id/idImagemProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/idInformaticaTituloProduto"
+            android:layout_below="@+id/idTituloProduto"
             android:layout_marginTop="10dp"
             
             />
         
         <TextView
-            android:id="@+id/idInformaticaDescricaoProduto"
+            android:id="@+id/idDescricaoProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/idImagemInformaticaProduto"
+            android:layout_below="@+id/idImagemProduto"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
             android:text="TExto aqui" />
@@ -88,7 +88,7 @@
             android:text="@string/btGerarVoucher" />
 
         <EditText
-            android:id="@+id/idVoucherEmail"
+            android:id="@+id/enviarEmailVoucher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btGerarVoucher"
@@ -107,7 +107,7 @@
             android:id="@+id/btEnviarVoucherEmail"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/idVoucherEmail"
+            android:layout_below="@+id/CadastrarEndereco"
             android:background="#ff9c00"
             android:gravity="center"
             android:textColor="#FFFFFF"

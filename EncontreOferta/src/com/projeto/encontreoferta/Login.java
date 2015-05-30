@@ -26,6 +26,7 @@ public class Login extends FragmentActivity{
 	String VerificaEmail;
 	String VerificaSenha;
 	
+	//Definindo as INTENTs
 	Intent intentMenuLogin;
 	Intent intentIrCadastrar;
 	Intent CadastroComSucesso;
@@ -100,6 +101,13 @@ public class Login extends FragmentActivity{
 	public boolean onMenuItemSelected(int panel, MenuItem item) {
 		//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 		switch (item.getItemId()) {
+		
+		case R.id.idMenuHistorico:
+			intentMenuLogin = new Intent(Login.this, Historico.class);
+			intentMenuLogin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intentMenuLogin);
+			break;
+		
 		case R.id.idMenuPrincipal:
 			intentMenuLogin = new Intent(Login.this, MainActivity.class);
 			intentMenuLogin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

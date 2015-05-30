@@ -21,6 +21,7 @@ public class Categoria extends FragmentActivity {
 	//Definindo as Variaveis	
 	private List<CategoriaController> categorias;
 	
+	//Definindos as INTENTs
 	Intent intentCategoriaSelecionada;
 	Intent intentMenuCategoria;
 
@@ -84,6 +85,13 @@ public class Categoria extends FragmentActivity {
 		public boolean onMenuItemSelected(int panel, MenuItem item) {
 			//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 			switch (item.getItemId()) {
+			
+			case R.id.idMenuHistorico:
+				intentMenuCategoria = new Intent(Categoria.this, Historico.class);
+				intentMenuCategoria.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intentMenuCategoria);
+				break;
+			
 			case R.id.idMenuPrincipal:
 				intentMenuCategoria = new Intent(Categoria.this, MainActivity.class);
 				intentMenuCategoria.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

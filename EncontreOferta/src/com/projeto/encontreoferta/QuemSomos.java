@@ -93,6 +93,13 @@ public class QuemSomos extends FragmentActivity{
 			public boolean onMenuItemSelected(int panel, MenuItem item) {
 				//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 				switch (item.getItemId()) {
+				
+				case R.id.idMenuHistorico:
+					intentMenuQuemSomos = new Intent(QuemSomos.this, Historico.class);
+					intentMenuQuemSomos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intentMenuQuemSomos);
+					break;
+				
 				case R.id.idMenuPrincipal:
 					intentMenuQuemSomos = new Intent(QuemSomos.this, MainActivity.class);
 					intentMenuQuemSomos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
