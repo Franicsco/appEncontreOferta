@@ -55,6 +55,8 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tipo_categoria_descricao);
 		
+		context = this;
+		
 		//Deixo o EditText Oculto
 		Email = (EditText) findViewById(R.id.enviarEmailVoucher);
 		Email.setVisibility(View.INVISIBLE);
@@ -62,13 +64,87 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 		//Deixo o TextView Oculto
 		btEnviarVoucher = (TextView) findViewById(R.id.btEnviarVoucherEmail);
 		btEnviarVoucher.setVisibility(View.INVISIBLE);
-		
+				
 		//Setando o Botão (GERAR VOUCHER) na variavel btGerarVoucher
 		btGerarVoucher = (TextView) findViewById(R.id.btGerarVoucher);
 		//Acao do Clique no botão GERAR VOUCHER
-		btGerarVoucher.setOnClickListener(this);
+		btGerarVoucher.setOnClickListener(new View.OnClickListener() {
 			
-		btEnviarVoucher.setOnClickListener(this);
+			@Override
+			public void onClick(View v) {
+				
+				
+				
+				if(logado.getUsuarioLogado() != null){
+					//Mostro o Numero o Voucher no Proprio botao GERAR VOUCHER
+					btGerarVoucher.setBackgroundColor(Color.BLACK);
+					btGerarVoucher.setText("Numero: " + numeroVoucher);
+					//Deixo visivel o Campo E-mail
+					Email.setVisibility(View.VISIBLE);
+					Email.setEnabled(false);
+					//Seto o e-mail do usuario que esta logado			
+					Email.setText(String.valueOf(logado.getUsuarioLogado().toString()));
+					
+					
+					
+					
+				}
+				else{
+					//Mostro o Numero o Voucher no Proprio botao GERAR VOUCHER
+					btGerarVoucher.setBackgroundColor(Color.BLACK);
+					btGerarVoucher.setText("Numero: " + numeroVoucher);
+					//Deixo visivel o Campo E-mail
+					Email.setVisibility(View.VISIBLE);
+
+
+					btEnviarVoucher.setVisibility(View.VISIBLE);
+					btEnviarVoucher.setOnClickListener(new View.OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							try{
+								//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
+								//Verifica se o e-mail e valido
+								
+								//Pego a String
+								stringEmail = Email.getText().toString().trim();
+								//Expressão regular para verifica se o e-mail é valido
+								VerificaEmail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+								//Verigico se o email é valido
+								if(stringEmail.matches(VerificaEmail)){
+									
+									//Definindo a configuracao SMTP
+									Properties pro = new Properties();					
+									pro.put("mail.smtp.host", "smtp.gmail.com");
+									pro.put("mail.smtp.socketFactory.port", "465");
+									pro.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+									pro.put("mail.smtp.auth", "true");
+									pro.put("mail.smtp.port", "465");
+									
+									sessao = javax.mail.Session.getDefaultInstance(pro, new Authenticator() {
+										protected PasswordAuthentication getPasswordAuthentication(){
+											return new PasswordAuthentication("comercialencontreoferta@gmail.com", "encontreoferta123");
+											
+										}
+									});
+									
+									pDialog = ProgressDialog.show(context, "", "Enviando E-mail...", true);
+									Retorno retorno = new Retorno();
+									retorno.execute();
+									
+								}else{
+									Toast.makeText(getApplicationContext(), "E-mail inválido", Toast.LENGTH_LONG).show();
+								}
+								}catch(Exception e){
+									
+								}
+							
+						}
+					});
+				}
+				
+			}
+		});
 		
 		//inseridno a logo ENCONTRE OFERTA
 		ActionBar ab =  getActionBar();
@@ -77,78 +153,14 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 		
 	}
 	
+	//Não uso
 	@Override
-	public void onClick(View v) {
-		
-		if(logado.getUsuarioLogado() != null){
-			//Mostro o Numero o Voucher no Proprio botao GERAR VOUCHER
-			btGerarVoucher.setBackgroundColor(Color.BLACK);
-			btGerarVoucher.setText("Numero: " + numeroVoucher);
-			//Deixo visivel o Campo E-mail
-			Email.setVisibility(View.VISIBLE);
-			Email.setEnabled(false);
-			//Seto o e-mail do usuario que esta logado			
-			Email.setText(String.valueOf(logado.getUsuarioLogado().toString()));
-		}
-		else{
-			//Mostro o Numero o Voucher no Proprio botao GERAR VOUCHER
-			btGerarVoucher.setBackgroundColor(Color.BLACK);
-			btGerarVoucher.setText("Numero: " + numeroVoucher);
-			//Deixo visivel o Campo E-mail
-			Email.setVisibility(View.VISIBLE);
-		}
-		
-		//Deixo visivel o Botão de Enviar o Voucher por e-mail
-		btEnviarVoucher.setVisibility(View.VISIBLE);
-		
-		
-				
-		btEnviarVoucher.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-
-				
-				try{
-				//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
-				//Verifica se o e-mail e valido
-				
-				//Pego a String
-				stringEmail = Email.getText().toString().trim();
-				
-				VerificaEmail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-				
-				if(stringEmail.matches(VerificaEmail)){
-										
-					//Definindo a configuracao SMTP
-					Properties pro = new Properties();					
-					pro.put("mail.smtp.host", "smtp.gmail.com");
-					pro.put("mail.smtp.socketFactory.port", "465");
-					pro.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-					pro.put("mail.smtp.auth", "true");
-					pro.put("mail.smtp.port", "465");
-					
-					sessao = javax.mail.Session.getDefaultInstance(pro, new Authenticator() {
-						protected PasswordAuthentication getPasswordAuthentication(){
-							return new PasswordAuthentication("comercialencontreoferta@gmail.com", "encontreoferta123");
-							
-						}
-					});
-					
-					pDialog = ProgressDialog.show(context, "", "Enviando E-mail...", true);
-					Retorno retorno = new Retorno();
-					retorno.execute();
-					
-				}else{
-					Toast.makeText(getApplicationContext(), "E-mail inválido", Toast.LENGTH_LONG).show();
-				}
-				}catch(Exception e){
-					
-				}
-			}
-		});
+	public void onClick(View v) {		
 	}
+	//Não uso
 	
+	
+	//Definindo o E-mail - DE: comercialencontreoferta@gmail.com PARA: (E-mail que o usuario digitar)
 	class Retorno extends AsyncTask<String, Void, String>{
 
 		@Override
@@ -172,10 +184,12 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 			return null;
 		}
 		
+		//Deixo os campos limpos assim que o e-mail é enviado
 		@Override
 		protected void onPostExecute(String result) {
 			pDialog.dismiss();
 			btGerarVoucher.setText("");
+			Email.setText("");
 			
 			Toast.makeText(getApplicationContext(), "Mensagem enviada", Toast.LENGTH_LONG).show();
 		}
