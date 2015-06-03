@@ -173,11 +173,11 @@ public class Contato extends FragmentActivity implements OnClickListener{
 			//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 			switch (item.getItemId()) {
 			
-			case R.id.idMenuHistorico:
+			/*case R.id.idMenuHistorico:
 				intentMenuContato = new Intent(Contato.this, Historico.class);
 				intentMenuContato.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intentMenuContato);
-				break;
+				break;*/
 			
 			case R.id.idMenuPrincipal:
 				intentMenuContato = new Intent(Contato.this, MainActivity.class);

@@ -86,6 +86,52 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 					Email.setText(String.valueOf(logado.getUsuarioLogado().toString()));
 					
 					
+					//Deixo o btEnviarVoucher visivel e faço a função ONCLICK para enviar o voucher por e-mail
+					btEnviarVoucher.setVisibility(View.VISIBLE);
+					btEnviarVoucher.setOnClickListener(new View.OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							try{
+								//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
+															
+								//Pego a String
+								stringEmail = Email.getText().toString().trim();
+								//Expressão regular para verifica se o e-mail é valido
+								VerificaEmail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+								//Verigico se o email é valido
+								if(stringEmail.matches(VerificaEmail)){
+									
+									//Definindo a configuracao SMTP
+									Properties pro = new Properties();					
+									pro.put("mail.smtp.host", "smtp.gmail.com");
+									pro.put("mail.smtp.socketFactory.port", "465");
+									pro.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+									pro.put("mail.smtp.auth", "true");
+									pro.put("mail.smtp.port", "465");
+									
+									sessao = javax.mail.Session.getDefaultInstance(pro, new Authenticator() {
+										protected PasswordAuthentication getPasswordAuthentication(){
+											return new PasswordAuthentication("comercialencontreoferta@gmail.com", "encontreoferta123");
+											
+										}
+									});
+									
+									pDialog = ProgressDialog.show(context, "", "Enviando E-mail...", true);
+									Retorno retorno = new Retorno();
+									retorno.execute();
+									
+								}else{
+									Toast.makeText(getApplicationContext(), "E-mail inválido", Toast.LENGTH_LONG).show();
+								}
+								}catch(Exception e){
+									
+								}
+							
+						}
+					});//
+					
+					
 					
 					
 				}
@@ -96,7 +142,7 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 					//Deixo visivel o Campo E-mail
 					Email.setVisibility(View.VISIBLE);
 
-
+					//Deixo o btEnviarVoucher visivel e faço a função ONCLICK para enviar o voucher por e-mail
 					btEnviarVoucher.setVisibility(View.VISIBLE);
 					btEnviarVoucher.setOnClickListener(new View.OnClickListener() {
 						
@@ -213,11 +259,11 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 				//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 				switch (item.getItemId()) {
 				
-				case R.id.idMenuHistorico:
+				/*case R.id.idMenuHistorico:
 					intentMenuTipoCategoriaDescricao = new Intent(TipoCategoriaDescricao.this, Historico.class);
 					intentMenuTipoCategoriaDescricao.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intentMenuTipoCategoriaDescricao);
-					break;
+					break;*/
 				
 				case R.id.idMenuPrincipal:
 					intentMenuTipoCategoriaDescricao = new Intent(TipoCategoriaDescricao.this, MainActivity.class);

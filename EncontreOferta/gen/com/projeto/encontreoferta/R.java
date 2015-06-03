@@ -70,11 +70,10 @@ public final class R {
         public static final int idInformarticaMostrarVoucher=0x7f080033;
         public static final int idListaCategoria=0x7f080012;
         public static final int idListaHistorico=0x7f080020;
-        public static final int idMenuCategoria=0x7f08003c;
-        public static final int idMenuContato=0x7f08003e;
-        public static final int idMenuHistorico=0x7f08003a;
-        public static final int idMenuPrincipal=0x7f08003b;
-        public static final int idMenuQuemSomos=0x7f08003d;
+        public static final int idMenuCategoria=0x7f08003b;
+        public static final int idMenuContato=0x7f08003d;
+        public static final int idMenuPrincipal=0x7f08003a;
+        public static final int idMenuQuemSomos=0x7f08003c;
         public static final int idSubTituloProduto=0x7f080038;
         public static final int idTituloProduto=0x7f08002f;
         public static final int idTituloProdutoCategoria=0x7f080037;

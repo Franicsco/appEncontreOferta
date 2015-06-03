@@ -42,11 +42,11 @@ public class Historico extends FragmentActivity{
 				//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 				switch (item.getItemId()) {
 				
-				case R.id.idMenuHistorico:
+				/*case R.id.idMenuHistorico:
 					intentMenuHistorico = new Intent(Historico.this, Historico.class);
 					intentMenuHistorico.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intentMenuHistorico);
-					break;
+					break;*/
 				
 				case R.id.idMenuPrincipal:
 					intentMenuHistorico = new Intent(Historico.this, MainActivity.class);

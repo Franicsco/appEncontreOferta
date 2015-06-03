@@ -86,11 +86,11 @@ public class Categoria extends FragmentActivity {
 			//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 			switch (item.getItemId()) {
 			
-			case R.id.idMenuHistorico:
+			/*case R.id.idMenuHistorico:
 				intentMenuCategoria = new Intent(Categoria.this, Historico.class);
 				intentMenuCategoria.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intentMenuCategoria);
-				break;
+				break;*/
 			
 			case R.id.idMenuPrincipal:
 				intentMenuCategoria = new Intent(Categoria.this, MainActivity.class);

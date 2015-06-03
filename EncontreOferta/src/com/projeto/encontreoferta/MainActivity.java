@@ -2,13 +2,13 @@ package com.projeto.encontreoferta;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 	
@@ -86,8 +86,21 @@ public class MainActivity extends FragmentActivity {
 		if(usuario.getUsuarioLogado() != null){
 			
 			login = (TextView) findViewById(R.id.principalLogin);
-			login.setVisibility(View.INVISIBLE);
-		
+			login.setText("Histórico");
+			login.setBackgroundColor(Color.GRAY);
+			login.setTextColor(Color.parseColor("#FFFFFF"));
+			
+			//Ação do botão para ir a tela de HISTÓRICO
+			login.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					intentHistorico = new Intent(MainActivity.this, Historico.class);
+					startActivity(intentHistorico);
+					
+					
+				}
+			});
 				
 		}
 		else{
@@ -149,11 +162,12 @@ public class MainActivity extends FragmentActivity {
 		//Verifico qual opção foi clicada no menu, crio uma INTENT e direciono para a tela da opção escolhida.
 		switch (item.getItemId()) {
 		
-		case R.id.idMenuHistorico:
+		
+		/*case R.id.idMenuHistorico:
 			intentHistorico = new Intent(MainActivity.this, Historico.class);
 			intentHistorico.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intentHistorico);
-			break;
+			break;*/
 		
 		case R.id.idMenuPrincipal:			
 			break;
