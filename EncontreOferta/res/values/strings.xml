@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Encontre Oferta</string>
+    <!-- PRINCIPAL -->
+    <string name="principalCategoria">Categoria</string>
+    <string name="principalTop10">Quem Somos</string>
+    <string name="principalContato">Contato</string>
+    <string name="principalLogin">Acesse sua conta</string>
+    <!-- PRINCIPAL -->
+    
+    <!-- QUEM SOMOS -->
+    <string name="btVoltarQuemSomoPrincipal">Principal</string>
+    <string name="tituloQuemSomos">QUEM SOMOS</string>
+    <!-- QUEM SOMOS -->
+    
+    <!-- CATEGORIA -->
+    <string name="btVoltarParaInicio">Principal</string>
+    <string name="tituloCategoria">CATEGORIA</string>
+    <!-- CATEGORIA -->
+    
+    <!-- LOGIN -->
+    <string name="tituloLogin">Acesse sua conta</string>
+    <string name="hint_LoginEmail">E-mail:</string>
+    <string name="hint_LoginSenha">Senha:</string>
+	<string name="btLogin">Acessar Conta</string>
+	<string name="textoCadastrese">Cadastre-se</string>
+	
+    <!-- LOGIN -->
+    
+    
+    <!-- CADASTRAR -->
+    <string name="tituloCadastrar">Cadastre-se</string>
+    <string name="hint_CadastrarNome">Nome:</string>
+    <string name="hint_CadastrarEmail">E-mail:</string>
+    <string name="hint_CadastrarSenha">Senha:</string>
+    <string name="hint_CadastrarTel">Telefone:</string>
+    <string name="hint_CadastrarEndereco">Endereço:</string>
+	<string name="btCadastrar">Cadastrar</string>
+	
+	
+    <!-- CADASTRAR -->
+    
+    <!-- BT GERAR VOUCHER / ENVIAR -->
+    <string name="btGerarVoucher">Gerar Voucher</string>
+    <string name="tituloHistorico">HISTÓRICO DE VOUCHERS</string>
+    <!-- BT GERAR VOUCHER / ENVIAR -->
+   
+    
+     <!-- CONTATO -->
+    <string name="btContatoVoltarInicio">Principal</string>
+    <string name="tituloContato">CONTATO</string>
+    
+    <string name="hint_ContatoNome">Nome: </string>
+    <string name="hint_ContatoEmail">Email: </string>
+    <string name="hint_ContatoMSG">Mensagem: </string>
+    <string name="btContatoEnviarEmail">Enviar</string>
+    <string name="textViewEntreContato">Entre em contato conosco</string>
+    <!-- CONTATO -->
+    
+    <!-- HISTORICO -->
+    <string name="historicoBemVindo">Bem Vindo: </string>
+    
+    <!-- HISTORICO -->
+     
+    <!-- ENVIAR VOUCHER -->
+    <string name="btEnviarVoucherVoltarTela">Voltar</string>
+    <string name="tituloEnviarVoucher">ENVIAR VOUCHER</string>
+    
+    <string name="hint_EnviarVoucherNome">Nome:</string>
+    <string name="hint_EnviarVoucherEmail">Email:</string>
+    <string name="enviarVoucherNumero">Numero do seu Voucher: </string>
+    <string name="btEnviarVoucher">Enviar</string>
+    
+    <string name="action_settings">Settings</string>
+
+</resources>
