@@ -1,5 +1,6 @@
 package com.projeto.encontreoferta;
 
+//Crio essa classe para o usuario que esta logado
 public class UsuarioLogado {
 	
 	public static String UsuarioLogado = null;

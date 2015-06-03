@@ -18,16 +18,12 @@ public class Cadastrar extends FragmentActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cadastrar);
 		
-		
-		
-		
 		//inseridno a logo ENCONTRE OFERTA
 		ActionBar ab =  getActionBar();
 		ab.setIcon(R.drawable.logo_icon);
 		//inseridno a logo ENCONTRE OFERTA
 		
-	}
-	
+	}	
 	
 	//MENU
 			@Override

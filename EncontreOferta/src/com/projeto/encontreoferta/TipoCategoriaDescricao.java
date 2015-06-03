@@ -104,8 +104,7 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 						public void onClick(View v) {
 							try{
 								//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
-								//Verifica se o e-mail e valido
-								
+															
 								//Pego a String
 								stringEmail = Email.getText().toString().trim();
 								//Expressão regular para verifica se o e-mail é valido
@@ -159,7 +158,7 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 	}
 	//Não uso
 	
-	
+	//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
 	//Definindo o E-mail - DE: comercialencontreoferta@gmail.com PARA: (E-mail que o usuario digitar)
 	class Retorno extends AsyncTask<String, Void, String>{
 
@@ -184,6 +183,7 @@ public class TipoCategoriaDescricao extends FragmentActivity implements OnClickL
 			return null;
 		}
 		
+		//Referencia: http://stackoverflow.com/questions/24969894/android-email-validation-on-edittext
 		//Deixo os campos limpos assim que o e-mail é enviado
 		@Override
 		protected void onPostExecute(String result) {

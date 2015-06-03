@@ -15,8 +15,7 @@ public class TipoCategoria extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tipo_categoria);
-		
+		setContentView(R.layout.tipo_categoria);		
 		
 		//inseridno a logo ENCONTRE OFERTA
 		ActionBar ab =  getActionBar();

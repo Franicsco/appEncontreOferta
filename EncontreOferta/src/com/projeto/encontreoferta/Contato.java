@@ -115,7 +115,7 @@ public class Contato extends FragmentActivity implements OnClickListener{
 				mensagem.setFrom(new InternetAddress("comercialencontreoferta@gmail.com"));
 				mensagem.setRecipients(Message.RecipientType.TO, InternetAddress.parse("siteencontreoferta@gmail.com"));
 				mensagem.setSubject("Contato de: " + contatoN);
-				mensagem.setContent(contatoE + "\n" + contatoM, "text/html; charset=utf-8");
+				mensagem.setContent(contatoE + "\n\n" + contatoM, "text/html; charset=utf-8");
 				
 				Transport.send(mensagem);
 				

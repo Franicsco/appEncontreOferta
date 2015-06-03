@@ -15,8 +15,7 @@ public class Historico extends FragmentActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.historico);
-		
+		setContentView(R.layout.historico);		
 		
 		//inseridno a logo ENCONTRE OFERTA
 		ActionBar ab =  getActionBar();
